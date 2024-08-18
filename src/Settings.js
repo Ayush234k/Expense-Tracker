@@ -37,6 +37,7 @@ const Settings = () => {
       <View style={styles.settingRow}>
         <Text style={styles.settingLabel}>Currency</Text>
         <Picker
+          dropdownIconColor= '#fff'
           selectedValue={selectedCurrency}
           onValueChange={(itemValue) => setSelectedCurrency(itemValue)}
           style={styles.picker}
@@ -50,6 +51,7 @@ const Settings = () => {
       <View style={styles.settingRow}>
         <Text style={styles.settingLabel}>Language</Text>
         <Picker
+          dropdownIconColor= '#fff'
           selectedValue={selectedLanguage}
           onValueChange={(itemValue) => setSelectedLanguage(itemValue)}
           style={styles.picker}
@@ -62,6 +64,7 @@ const Settings = () => {
       <View style={styles.settingRow}>
         <Text style={styles.settingLabel}>Time Zone</Text>
         <Picker
+          dropdownIconColor= '#fff'
           selectedValue={selectedTimeZone}
           onValueChange={(itemValue) => setSelectedTimeZone(itemValue)}
           style={styles.picker}
@@ -76,14 +79,15 @@ const Settings = () => {
         <Switch
           value={notificationsEnabled}
           onValueChange={setNotificationsEnabled}
-          trackColor={{ false: "#767577", true: "#81b0ff" }}
-          thumbColor={notificationsEnabled ? "#f5dd4b" : "#f4f3f4"}
+          trackColor={{ false: "#767577", true: "#1F75FE" }}
+          thumbColor={notificationsEnabled ? "#00FFFF" : "#f4f3f4"}
         />
       </View>
 
       <View style={styles.settingRow}>
         <Text style={styles.settingLabel}>Data Privacy</Text>
         <Picker
+          dropdownIconColor= '#fff'
           selectedValue={dataPrivacy}
           onValueChange={(itemValue) => setDataPrivacy(itemValue)}
           style={styles.picker}
@@ -98,8 +102,8 @@ const Settings = () => {
         <Switch
           value={budgetAlertsEnabled}
           onValueChange={setBudgetAlertsEnabled}
-          trackColor={{ false: "#767577", true: "#81b0ff" }}
-          thumbColor={budgetAlertsEnabled ? "#f5dd4b" : "#f4f3f4"}
+          trackColor={{ false: "#767577", true: "#1F75FE" }}
+          thumbColor={budgetAlertsEnabled ? "#00FFFF" : "#f4f3f4"}
         />
       </View>
 
@@ -108,8 +112,8 @@ const Settings = () => {
         <Switch
           value={biometricAuthEnabled}
           onValueChange={setBiometricAuthEnabled}
-          trackColor={{ false: "#767577", true: "#81b0ff" }}
-          thumbColor={biometricAuthEnabled ? "#f5dd4b" : "#f4f3f4"}
+          trackColor={{ false: "#767577", true: "#1F75FE" }}
+          thumbColor={biometricAuthEnabled ? "#00FFFF" : "#f4f3f4"}
         />
       </View>
 
@@ -152,10 +156,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
       },
       title: {
-        fontSize: 30,
+        fontSize: 35,
         fontWeight: 'bold',
-    
-        marginBottom: 30,
+        marginBottom: 60,
         color: '#fff', 
       },
       inputView: {
@@ -181,11 +184,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         width: '100%',
-        marginBottom: 20,
+        marginBottom: 42,
       },
       settingLabel: {
         color: '#fff',
-        fontSize: 16,
+        fontSize: 20,
       },
       picker: {
         height: 50,
@@ -213,8 +216,11 @@ const styles = StyleSheet.create({
       saveText: {
         color: 'white',
         fontWeight: 'bold',
+        fontSize: 17,
       },  
       changeButton: {
+        width: 100,
+        alignItems: 'center',
         backgroundColor: 'white', 
         paddingHorizontal: 10,
         paddingVertical: 5,
@@ -224,6 +230,7 @@ const styles = StyleSheet.create({
       },
       changeButtonText: {
         color: 'black', 
+        fontSize: 15,
       },
     modalContainer: {
         flex: 1,
@@ -240,13 +247,13 @@ const styles = StyleSheet.create({
     modalTitle: {
         fontSize: 18,
         fontWeight: 'bold',
-        marginBottom: 10,
+        marginBottom: 30,
     },
     modalInput: {
         borderWidth: 1,
         borderColor: 'gray',
         padding: 10,
-        marginBottom: 10,
+        marginBottom: 20,
         borderRadius: 15,
     },
     modalButton: {
@@ -254,10 +261,12 @@ const styles = StyleSheet.create({
         padding: 10,
         borderRadius: 15,
         alignItems: 'center',
+        marginBottom: 10,
     },
     modalButtonText: {
         color: 'white',
         fontWeight: 'bold',
+        fontSize: 16,
     },
 });
 
