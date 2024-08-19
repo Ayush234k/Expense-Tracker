@@ -52,7 +52,7 @@ const Contact = () => {
         </View>
 
         <TouchableOpacity onPress={onSubmit} style={styles.submitBtn}>
-          <Text style={styles.submitText}>Submit</Text>
+          <Text style={styles.submitText}>SUBMIT</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -73,9 +73,9 @@ const styles = StyleSheet.create({
     paddingVertical: 40,
   },
   title: {
-    fontSize: 30,
+    fontSize: 35,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 40,
     color: '#fff',
   },
   subtitle: {
@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
   inputView: {
     width: '100%',
     backgroundColor: '#333',
-    borderRadius: 25,
+    borderRadius: 30,
     height: 60,
     marginBottom: 30,
     justifyContent: 'center',

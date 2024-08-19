@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
       textAlign: 'center',
     },
     title: { 
-      fontSize: 30,
+      fontSize: 35,
       fontWeight: 'bold',
       marginBottom: 30,
       color: '#fff', 
@@ -101,8 +101,8 @@ const styles = StyleSheet.create({
     inputView: {
       width: '100%',
       backgroundColor: '#333', 
-      borderRadius: 25,
-      height: 50,
+      borderRadius: 30,
+      height: 60,
       marginBottom: 20,
       justifyContent: 'center',
       paddingHorizontal: 20,

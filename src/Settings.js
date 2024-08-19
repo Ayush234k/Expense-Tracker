@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Switch, Modal } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
+import { useNavigation } from '@react-navigation/native';
+
 
 const Settings = () => {
   const [password, setPassword] = useState('');
@@ -14,13 +16,19 @@ const Settings = () => {
   const [isChangePasswordModalVisible, setChangePasswordModalVisible] = useState(false);
   const [newPassword, setNewPassword] = useState('');
 
-  const onSave = () => {
-    Alert.alert('Settings Saved', 'Your settings have been updated.');
-  };
+  // const onSave = () => {
+  //   Alert.alert('Settings Saved', 'Your settings have been updated.');
+  // };
 
   const handleChangePassword = () => {
     setChangePasswordModalVisible(false);
     console.log('New password:', newPassword);
+  };
+
+  const navigation = useNavigation(); 
+
+  const onSave = () => {
+    navigation.navigate('Login'); 
   };
 
   return (
@@ -188,7 +196,7 @@ const styles = StyleSheet.create({
       },
       settingLabel: {
         color: '#fff',
-        fontSize: 20,
+        fontSize: 18,
       },
       picker: {
         height: 50,

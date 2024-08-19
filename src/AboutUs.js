@@ -6,7 +6,7 @@ const AboutUs = () => {
   const navigation = useNavigation();
 
   const onLogin = () => {
-    navigation.navigate('Login');
+    navigation.navigate('Profile');
   };
 
   return (
