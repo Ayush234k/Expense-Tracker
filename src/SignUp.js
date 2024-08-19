@@ -19,12 +19,13 @@ const SignUp = () => {
   const navigation = useNavigation(); 
 
   const onPressLogin = () => {
-    navigation.navigate('Contact'); 
+    navigation.navigate('Login'); 
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Sign Up</Text>
+      <View style={styles.whiteSpace}></View>
+      <Text style={styles.title}>Create Account</Text>
       <Text style={styles.introText}>
         Discover a world of possibilities. Join our community today!
       </Text>
@@ -84,6 +85,8 @@ const SignUp = () => {
             <Text style={{ color: 'white', fontSize : 15, fontWeight : 700}}>Facebook</Text>
           </View>
       </View>
+      <View style={styles.terms}></View>
+      <Text style={styles.termsText}>By clicking Create Account you agree to our Terms of use and Privacy policy.</Text>
     </View>
   );
 };
@@ -91,10 +94,14 @@ const SignUp = () => {
 const styles = StyleSheet.create({
     container: {
       flex: 1,
+      flexDirection: 'column',
       backgroundColor: '#222', 
       alignItems: 'center',
       justifyContent: 'center',
       paddingHorizontal: 20,
+    },
+    whiteSpace:{
+      height: 90,
     },
     title: {
       fontSize: 30,
@@ -186,6 +193,12 @@ const styles = StyleSheet.create({
       shadowRadius: 3,
       elevation: 5, 
     },
+    termsText:{
+      color: '#fff',
+      fontSize: 14,
+      textAlign: 'center',
+      marginTop: 130,
+    }
   });
 
 export default SignUp;

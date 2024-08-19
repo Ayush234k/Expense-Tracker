@@ -28,7 +28,7 @@ const Settings = () => {
   const navigation = useNavigation(); 
 
   const onSave = () => {
-    navigation.navigate('Login'); 
+    navigation.navigate('Banner'); 
   };
 
   return (

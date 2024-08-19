@@ -2,8 +2,17 @@ import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, ScrollView } from 'react-native';
 import FastImage from 'react-native-fast-image'
 import profilePicture from './assets/f1f.png';
+import { useNavigation } from '@react-navigation/native';
+
 
 const Profile = () => {
+
+  const navigation = useNavigation(); 
+
+  const onPressLogout = () => {
+    navigation.navigate('Setting'); 
+  };
+
   return (
     <ScrollView style={styles.container}> 
       <View style={styles.profileHeader}>
@@ -82,7 +91,7 @@ const Profile = () => {
         </TouchableOpacity>
       </View>
 
-      <TouchableOpacity style={styles.logoutButton}>
+      <TouchableOpacity style={styles.logoutButton} onPress={onPressLogout}>
         <Text style={styles.logoutText}>Logout</Text>
       </TouchableOpacity>
     </ScrollView>

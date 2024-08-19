@@ -16,8 +16,8 @@ const Login = () => {
 
   const navigation = useNavigation(); 
 
-  const onPressSignUp = () => {
-    navigation.navigate('Signup'); 
+  const onPressGetStarted = () => {
+    navigation.navigate('Contact'); 
   };
 
   return (
@@ -45,19 +45,22 @@ const Login = () => {
         />
       </View>
 
-      <TouchableOpacity onPress={onPressForgotPassword}>
-        <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-      </TouchableOpacity>
-
       <TouchableOpacity onPress={onPressLogin} style={styles.loginBtn}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={onPressSignUp}>
-      <Text style={styles.signUpText}>
-        Don't have an account? <Text style={styles.signUpHighlight}>Sign Up</Text>
-      </Text>
+      <TouchableOpacity onPress={onPressForgotPassword}>
+        <Text style={styles.forgotPasswordText}>Forgot your password?</Text>
       </TouchableOpacity>
+
+      <View style={styles.horizontalLine} /> 
+
+      <View style={styles.signUp}>
+        <Text style={{ color: '#AAAAAA', fontSize : 15 }}>Don't have an account?</Text>
+        <TouchableOpacity style={styles.signUpBtn} onPress={onPressGetStarted}>
+          <Text style={{ color: 'white', fontSize : 15 }}>Get Started</Text>
+        </TouchableOpacity>
+      </View>
 
       <View style={styles.googleLogin1}>
           <View style={styles.loginBtn1}>
@@ -93,7 +96,7 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#333', 
     borderRadius: 30,
-    height: 60,
+    height: 63,
     marginBottom: 20,
     justifyContent: 'center',
     paddingHorizontal: 20,
@@ -108,7 +111,9 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   forgotPasswordText: {
-    color: '#007bff',
+    fontSize: 15,
+    color: '#AAAAAA',
+    marginTop: 30,
     marginBottom: 20,
   },
   loginBtn: {
@@ -126,15 +131,37 @@ const styles = StyleSheet.create({
     elevation: 5, 
   },
   loginText: {
+    fontSize: 15,
     color: 'white',
     fontWeight: 'bold',
   },
-  signUpText: {
-    marginTop: 20,
-    color: '#ccc', 
+  horizontalLine: {
+    width: '100%',
+    borderBottomColor: '#71797E', 
+    borderBottomWidth: 0.2,
+    marginVertical: 20,
   },
-  signUpHighlight: {
-    color: '#007bff', 
+  signUp:{
+    width: '100%',
+    height: 60,
+    marginTop: 10,
+    paddingLeft: 10,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+  signUpBtn: {
+    width: '35%',
+    height: '80%',
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#333', 
+    shadowColor: '#000', 
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 5, 
   },
   googleLogin1: {
     width: '100%',

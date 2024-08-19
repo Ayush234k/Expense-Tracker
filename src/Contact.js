@@ -15,9 +15,9 @@ const Contact = () => {
   return (
     <ScrollView contentContainerStyle={styles.scrollViewContent}>
       <View style={styles.container}>
-        <Text style={styles.title}>Contact Us</Text>
+        <Text style={styles.title}>Connect with our team</Text>
         <Text style={styles.subtitle}>
-          Need help? Have a question? Get in touch with us!
+          Facing a challenge? Don't hesitate to connect with us. We're ready to help and will respond as quickly as possible.
         </Text>
 
         <View style={styles.inputView}>
@@ -75,12 +75,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 35,
     fontWeight: 'bold',
-    marginBottom: 40,
+    marginBottom: 20,
     color: '#fff',
   },
   subtitle: {
-    fontSize: 16,
-    marginBottom: 30,
+    fontSize: 15,
+    lineHeight: 22,
+    marginBottom: 50,
     color: '#ccc',
     textAlign: 'center',
   },
@@ -88,8 +89,8 @@ const styles = StyleSheet.create({
     width: '100%',
     backgroundColor: '#333',
     borderRadius: 30,
-    height: 60,
-    marginBottom: 30,
+    height: 65,
+    marginBottom: 20,
     justifyContent: 'center',
     paddingHorizontal: 20,
     shadowColor: '#000',
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
     height: 50,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 10,
+    marginTop: 40,
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.3,
@@ -122,6 +123,7 @@ const styles = StyleSheet.create({
   },
   submitText: {
     color: 'white',
+    fontSize: 15,
     fontWeight: 'bold',
   },
 });

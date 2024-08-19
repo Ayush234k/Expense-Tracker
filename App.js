@@ -8,6 +8,7 @@ import Contact from './src/Contact';
 import AboutUs from './src/AboutUs';
 import Setting from './src/Settings';
 import Profile from './src/Profile';
+import Banner from './src/Banner';
 // import Dashboard from './src/Dashboard';
 
 const App = () => {
@@ -15,8 +16,9 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Login"
+        initialRouteName="Banner"
         screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Banner" component={Banner} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={SignUp} />
         <Stack.Screen name="Setting" component={Setting} />
