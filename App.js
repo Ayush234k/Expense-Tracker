@@ -15,15 +15,15 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Setting"
+        initialRouteName="Login"
         screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Signup" component={SignUp} />
         <Stack.Screen name="Setting" component={Setting} />
         <Stack.Screen name="About" component={AboutUs} />
         <Stack.Screen name="Profile" component={Profile} />
         <Stack.Screen name="Contact" component={Contact} />
-        <Stack.Screen name="Login" component={Login} />
         {/* <Stack.Screen name="Dashboard" component={Dashboard} /> */}
-        <Stack.Screen name="Signup" component={SignUp} />
       </Stack.Navigator>
     </NavigationContainer>
   );

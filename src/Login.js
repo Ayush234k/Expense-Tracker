@@ -54,8 +54,23 @@ const Login = () => {
       </TouchableOpacity>
 
       <TouchableOpacity onPress={onPressSignUp}>
-        <Text style={styles.signUpText}>Don't have an account? Sign Up</Text>
+      <Text style={styles.signUpText}>
+        Don't have an account? <Text style={styles.signUpHighlight}>Sign Up</Text>
+      </Text>
       </TouchableOpacity>
+
+      <View style={styles.googleLogin1}>
+          <View style={styles.loginBtn1}>
+            {/* <Icon name="rocket" size={50} color="#900" /> */}
+            <Text style={{ color: 'white', fontSize : 15, fontWeight : 700}}>Google</Text> 
+          </View>
+          <View style={styles.loginBtn1}>
+            <Text style={{ color: 'white', fontSize : 15, fontWeight : 700}}>Apple</Text>
+          </View>
+          <View style={styles.loginBtn1}>
+            <Text style={{ color: 'white', fontSize : 15, fontWeight : 700}}>Facebook</Text>
+          </View>
+      </View>
     </View>
   );
 };
@@ -117,6 +132,30 @@ const styles = StyleSheet.create({
   signUpText: {
     marginTop: 20,
     color: '#ccc', 
+  },
+  signUpHighlight: {
+    color: '#007bff', 
+  },
+  googleLogin1: {
+    width: '100%',
+    height: 80,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    marginTop: 60,
+  },
+  loginBtn1: {
+    width: '30%',
+    height: '80%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 15,
+    backgroundColor: '#333', 
+    shadowColor: '#000', 
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 5, 
   },
 });
 

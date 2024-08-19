@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+// import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 const SignUp = () => {
   const [name, setName] = useState('');
@@ -66,9 +67,23 @@ const SignUp = () => {
         <Text style={styles.signUpText}>SIGN UP</Text>
       </TouchableOpacity>
 
-      <TouchableOpacity onPress={onPressLogin}>
-        <Text style={styles.loginText}>Already have an account? Login</Text>
+      <TouchableOpacity onPress={onPressLogin} style={styles.loginText}>
+        <Text style={styles.loginText1}>Already have an account?</Text>
+        <Text style={styles.loginText2}>Login</Text>
       </TouchableOpacity>
+
+      <View style={styles.googleLogin}>
+          <View style={styles.loginBtn}>
+            {/* <Icon name="rocket" size={50} color="#900" /> */}
+            <Text style={{ color: 'white', fontSize : 15, fontWeight : 700}}>Google</Text> 
+          </View>
+          <View style={styles.loginBtn}>
+            <Text style={{ color: 'white', fontSize : 15, fontWeight : 700}}>Apple</Text>
+          </View>
+          <View style={styles.loginBtn}>
+            <Text style={{ color: 'white', fontSize : 15, fontWeight : 700}}>Facebook</Text>
+          </View>
+      </View>
     </View>
   );
 };
@@ -138,30 +153,38 @@ const styles = StyleSheet.create({
       color: 'white',
       fontWeight: 'bold',
     },
-    googleBtn: {
+    loginText: {
       flexDirection: 'row',
-      alignItems: 'center',
-      backgroundColor: '#fff',
-      borderRadius: 25,
-      height: 50,
-      paddingHorizontal: 20,
+    },
+    loginText1: {
       marginTop: 20,
-      shadowColor: '#000',
+      color: '#ccc',
+    },
+    loginText2: {
+      marginTop: 20,
+      color: '#007bff',
+      marginLeft: 6,
+    },
+    googleLogin: {
+      width: '100%',
+      height: 80,
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      flexDirection: 'row',
+      marginTop: 60,
+    },
+    loginBtn: {
+      width: '30%',
+      height: '80%',
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 15,
+      backgroundColor: '#333', 
+      shadowColor: '#000', 
       shadowOffset: { width: 0, height: 2 },
       shadowOpacity: 0.3,
       shadowRadius: 3,
-      elevation: 5,
-    },
-    googleIcon: {
-      marginRight: 10,
-    },
-    googleText: {
-      color: '#333',
-      fontWeight: 'bold',
-    },
-    loginText: {
-      marginTop: 20,
-      color: '#007bff',
+      elevation: 5, 
     },
   });
 
