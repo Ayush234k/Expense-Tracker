@@ -9,6 +9,7 @@ import AboutUs from './src/AboutUs';
 import Setting from './src/Settings';
 import Profile from './src/Profile';
 import Banner from './src/Banner';
+import dashBoard from './src/Dashboard';
 // import Dashboard from './src/Dashboard';
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         <Stack.Screen name="Banner" component={Banner} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={SignUp} />
+        <Stack.Screen name="Dashboard" component={dashBoard} />
         <Stack.Screen name="Setting" component={Setting} />
         <Stack.Screen name="About" component={AboutUs} />
         <Stack.Screen name="Profile" component={Profile} />

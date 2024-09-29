@@ -17,7 +17,7 @@ const Login = () => {
   const navigation = useNavigation(); 
 
   const onPressGetStarted = () => {
-    navigation.navigate('Contact'); 
+    navigation.navigate('Dashboard'); 
   };
 
   return (
