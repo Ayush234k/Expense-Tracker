@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
 
 const Dashboard = () => {
+  const [activeTimeframe, setActiveTimeframe] = useState('1W');
+
+  const timeframeOptions = [
+    { label: '7D', color: '#64748B' }, 
+    { label: '1W', color: '#5563f5' }, 
+    { label: '1M', color: '#94A3B8' }, 
+  ];
+
   return (
     <View style={styles.container}>
       {/* Card section */}
@@ -27,13 +35,32 @@ const Dashboard = () => {
         </TouchableOpacity>
       </View>
 
-      {/* History graph placeholder */}
-      <View style={styles.historySection}>
+      {/* History Section */}
+      <View style={styles.historyContainer}>
         <Text style={styles.historyLabel}>History</Text>
-        <View style={styles.timeframeButtons}>
-          <Text style={styles.timeframeButton}>7D</Text>
-          <Text style={styles.timeframeButtonActive}>1W</Text>
-          <Text style={styles.timeframeButton}>1M</Text>
+        <View style={styles.historyHeader}>
+          <Text style={styles.historyAmount}>$636,856</Text>
+          <View style={styles.historyTimeframe}>
+            {timeframeOptions.map((option) => (
+              <TouchableOpacity 
+                key={option.label} 
+                onPress={() => setActiveTimeframe(option.label)}
+                style={[
+                  styles.timeframeButton, 
+                  activeTimeframe === option.label && { 
+                    backgroundColor: option.color, 
+                    shadowColor: option.color, 
+                    shadowOffset: { width: 0, height: 2 },
+                    shadowOpacity: 0.3,
+                    shadowRadius: 4,
+                    elevation: 3, 
+                  }
+                ]}
+              >
+                <Text style={styles.timeframeButtonText}>{option.label}</Text>
+              </TouchableOpacity>
+            ))}
+          </View>
         </View>
 
         {/* Placeholder for the line graph */}
@@ -155,36 +182,40 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     fontWeight: 'bold',
   },
-  historySection: {
+  // History Section Styles
+  historyContainer: {
     marginBottom: 20,
   },
   historyLabel: {
     color: '#fff',
     fontSize: 18,
     fontWeight: 'bold',
-  },
-  timeframeButtons: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
     marginBottom: 10,
   },
-  timeframeButton: {
-    color: '#fff',
-    fontWeight: 'bold',
-    backgroundColor: '#333',
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderRadius: 10,
-    marginHorizontal: 5,
+  historyHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 10,
   },
-  timeframeButtonActive: {
+  historyAmount: {
+    color: '#fff',
+    fontSize: 24,
+    fontWeight: 'bold',
+  },
+  historyTimeframe: {
+    flexDirection: 'row',
+    borderRadius: 20,
+  },
+  timeframeButton: {
+    paddingVertical: 8,
+    paddingHorizontal: 15,
+    borderRadius: 20, 
+    marginHorizontal: 2, 
+  },
+  timeframeButtonText: { 
     color: '#fff',
     fontWeight: 'bold',
-    backgroundColor: '#5563f5', 
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderRadius: 10,
-    marginHorizontal: 5,
   },
   graphPlaceholder: {
     backgroundColor: '#333', 
