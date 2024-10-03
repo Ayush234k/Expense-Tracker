@@ -281,7 +281,8 @@ const styles = StyleSheet.create({
   squareDiv: {
     width: 24,
     height: 24,
-    backgroundColor: '#fff',
+    backgroundColor: '#848884',
+    borderRadius: 5,
   },
 });
 
