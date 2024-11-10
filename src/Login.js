@@ -1,13 +1,27 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import auth from './firebaseConfig';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  const authentication = getAuth(auth);
+
   const onPressLogin = () => {
-    Alert.alert('Login Attempted', `Email: ${email}, Password: ${password}`);
+    signInWithEmailAndPassword(authentication, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        Alert.alert("Login Successful", `Welcome back ${user.email}`);
+        navigation.navigate('Dashboard'); // Redirect to Dashboard upon successful login
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        Alert.alert("Login Failed", `${errorCode}: ${errorMessage}`); // Show error message
+      });
   };
 
   const onPressForgotPassword = () => {
@@ -17,7 +31,7 @@ const Login = () => {
   const navigation = useNavigation(); 
 
   const onPressGetStarted = () => {
-    navigation.navigate('Dashboard'); 
+    navigation.navigate('SignUp'); 
   };
 
   return (

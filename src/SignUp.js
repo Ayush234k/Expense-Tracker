@@ -8,6 +8,9 @@ import {
   Alert,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import auth from "./firebaseConfig";
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+const authentication = getAuth(auth);
 // import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 const SignUp = () => {
@@ -47,20 +50,26 @@ const SignUp = () => {
     }
     setPassword(text);
   }
-  const onPressSignUpp = () => {
+  const onPressSignUp = () => {
     if (nameVerify && emailVerify && passwordVerify) {
-      Alert.alert(
-        "Sign up Attempted",
-        `Email: ${email}, Password: ${password}`
-      )
+      
+        createUserWithEmailAndPassword(authentication,email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          Alert.alert("Account Created", `Welcome ${user.email}`);
+          navigation.navigate("Dashboard"); // Navigate to dashboard
+        })
+        .catch((error) => {
+          Alert.alert("Signup Failed", error.message);
+        });
     } else if (nameVerify == false) Alert.alert("Enter a valid name");
     else if (emailVerify == false) Alert.alert("Enter a valid email");
     else Alert.alert("Password should contains at least 6 characters");
   };
 
-  const onPressGoogleSignUp = () => {
-    Alert.alert("Google Sign Up...");
-  };
+  // const onPressGoogleSignUp = () => {
+  //   Alert.alert("Google Sign Up...");
+  // };
 
   const navigation = useNavigation();
 
@@ -107,7 +116,7 @@ const SignUp = () => {
         />
       </View>
 
-      <TouchableOpacity onPress={onPressSignUpp} style={styles.signUpBtn}>
+      <TouchableOpacity onPress={onPressSignUp} style={styles.signUpBtn}>
         <Text style={styles.signUpText}>SIGN UP</Text>
       </TouchableOpacity>
 
