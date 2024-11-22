@@ -15,7 +15,7 @@ const Dashboard = () => {
       {/* Card section */}
       <View style={styles.card}>
         <Text style={styles.balanceLabel}>Balance</Text>
-        <Text style={styles.balanceAmount}>$25,327</Text>
+        <Text style={styles.balanceAmount}>$327</Text>
         <Text style={styles.cardNumber}>.... 3587</Text>
         <View style={styles.visaSection}>
           <View style={styles.squareDiv} /> 
